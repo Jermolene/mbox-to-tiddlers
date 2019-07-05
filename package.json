@@ -1,0 +1,17 @@
+{
+  "name": "mboxer",
+  "version": "1.0.0",
+  "description": "Import tiddlers from mbox files",
+  "main": "index.js",
+  "dependencies": {
+    "mailparser": "^2.7.1",
+    "node-mbox": "^1.0.0",
+    "tiddlywiki": "^5.1.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
