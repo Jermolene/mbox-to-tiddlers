@@ -4,9 +4,9 @@
   "description": "Import tiddlers from mbox files",
   "main": "index.js",
   "dependencies": {
-    "mailparser": "^2.7.1",
+    "mailparser": "^2.7.5",
     "node-mbox": "^1.0.0",
-    "tiddlywiki": "^5.1.19"
+    "tiddlywiki": "^5.1.21"
   },
   "devDependencies": {},
   "scripts": {
