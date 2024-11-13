@@ -2,6 +2,32 @@
 
 A utility to convert mbox files into tiddlers
 
+**NOTE THAT THIS PROGRAM ONLY WORKS ON Node.js 16.x**
+
+Later versions of Node.js raise the following error within the "mailsplit" dependency:
+
+```
+/mbox-to-tiddlers/node_modules/mailsplit/lib/message-splitter.js:28
+        this.errored = false;
+                     ^
+
+TypeError: Cannot set property errored of #<Readable> which has only a getter
+    at new MessageSplitter (/mbox-to-tiddlers/node_modules/mailsplit/lib/message-splitter.js:28:22)
+    at new MailParser (/mbox-to-tiddlers/node_modules/mailparser/lib/mail-parser.js:132:25)
+    at module.exports (/mbox-to-tiddlers/node_modules/mailparser/lib/simple-parser.js:25:18)
+    at Mbox.<anonymous> (/mbox-to-tiddlers/index.js:25:2)
+    at Mbox.emit (node:events:519:28)
+    at emit (/mbox-to-tiddlers/node_modules/node-mbox/src/mbox.js:53:12)
+    at DestroyableTransform.<anonymous> (/mbox-to-tiddlers/node_modules/node-mbox/src/mbox.js:97:11)
+    at DestroyableTransform.emit (node:events:519:28)
+    at addChunk (/mbox-to-tiddlers/node_modules/through2/node_modules/readable-stream/lib/_stream_readable.js:291:12)
+    at readableAddChunk (/mbox-to-tiddlers/node_modules/through2/node_modules/readable-stream/lib/_stream_readable.js:278:11)
+
+Node.js v20.15.0
+```
+
+This appears to be an issue with the mailsplit library, and the solution may require switching to a different library.
+
 # Overview
 
 Each message in the mbox file is converted into a separate tiddler with the following fields:
